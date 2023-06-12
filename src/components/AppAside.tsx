@@ -44,7 +44,7 @@ const sampleFIles: FileInterface[] = [
 
 export default function Aside() {
   return (
-    <aside className="hidden lg:block lg:flex-col items-center lg:col-span-3 pt-10 px-8  h-full bg-[rgba(226,233,252,255)]">
+    <aside className="hidden lg:block lg:flex-col items-center lg:col-span-3 pt-10 px-8  h-full bg-[rgba(226,233,252,255)] dark:bg-app-dark-700">
       {
         <h2 className="font-bold  dark:text-gray-400 flex items-center justify-between mb-10">
           Sent Files

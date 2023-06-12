@@ -41,7 +41,7 @@ export default function FileCard({
   const fileT = fileType as any;
   return (
     <>
-      <div className="flex justify-between items-center my-8 flex-wrap bg-[#edeffb]  border-gray-900  p-3 rounded-lg shadow-md shadow-gray-300 cursor-pointer dark:shadow-none hover:shadow-sm hover:shadow-gray-400 transition-shadow ease-in-out">
+      <div className="flex justify-between items-center my-8 flex-wrap bg-[#edeffb]  border-gray-900  p-3 rounded-lg shadow-md shadow-gray-300 cursor-pointer dark:shadow-sm hover:shadow-sm hover:shadow-gray-400 transition-shadow ease-in-out dark:border-app-dark-500 dark:border-[1px]  dark:bg-app-dark">
         <Image
           src={`/images/mime/${fileType}.png`} // Route of the image file
           height={120} // Desired size with correct aspect ratio

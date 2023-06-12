@@ -86,7 +86,7 @@ const ProgressComponent = ({
       }}
       className="hidden lg:block"
     >
-      <div className="flex justify-between mb-2 px-4">
+      <div className="flex justify-between mb-2 px-4 dark:text-gray-400">
         {
           <span className=" font-medium text-blue-700 text-sm capitalize ">
             {systemName}
@@ -99,7 +99,7 @@ const ProgressComponent = ({
       </div>
       <div className="w-fill bg-gray-200 rounded-md mx-4 h-2">
         <div
-          className="bg-app-400 h-1.5 rounded-full"
+          className="bg-app-400  dark:bg-app-dark-50 h-2 rounded-full"
           style={{ width: "45%" }}
         ></div>
       </div>
@@ -375,7 +375,7 @@ export default function AppNavigation() {
       </Transition>
 
       <nav
-        className="col-span-1 lg:col-span-2 bg-[rgba(249,250,254,255)]  px-[1px]   text-gray-600  pt-10"
+        className="col-span-1 lg:col-span-2 bg-[rgba(249,250,254,255)]  dark:bg-app-dark-600 px-[1px]   text-gray-600  pt-10"
         style={{
           height: "calc(100vh-200px)",
           overflowY: "hidden",
@@ -388,27 +388,24 @@ export default function AppNavigation() {
            * otherwise, hide the name and show the icons only
            */}
           {routes.map((route, index) => (
-            <Link
-              key={index}
-              href={`${route.path}`}
-              legacyBehavior={true}
-            >
-              <a className={`flex h-6 my-8 lg:my-8 first:mt-10  text-gray-500 cursor-pointer ${
+            <Link key={index} href={`${route.path}`} legacyBehavior={true}>
+              <a
+                className={`flex h-6 my-8 lg:my-8 first:mt-10  text-gray-500 cursor-pointer ${
                   route.isActive ? "hover:text-app-600" : "hover:text-gray-700"
-              }`}
-                 onMouseEnter={() => setActiveRoute(route.path)}
-                 onMouseLeave={() => MouseLeave()} >
-              <span onClick={route.action} className="cursor-pointer">
-              <span className="sr-only">{route.path}</span>
-            <div className="gap-2 justify-center align-center flex capitalize">
-          {route.isActive ? route.alternateIcon : route.icon}
-            <span className="hidden lg:block" id="route__name">
-          {route.name}
-            </span>
-            </div>
-            </span>
+                }`}
+                onMouseEnter={() => setActiveRoute(route.path)}
+                onMouseLeave={() => MouseLeave()}
+              >
+                <span onClick={route.action} className="cursor-pointer">
+                  <span className="sr-only">{route.path}</span>
+                  <div className="gap-2 justify-center align-center flex capitalize">
+                    {route.isActive ? route.alternateIcon : route.icon}
+                    <span className="hidden lg:block" id="route__name">
+                      {route.name}
+                    </span>
+                  </div>
+                </span>
               </a>
-
             </Link>
           ))}
         </ul>
